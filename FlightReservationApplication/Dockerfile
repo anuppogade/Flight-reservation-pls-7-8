@@ -10,7 +10,7 @@ RUN mvn clean install -DskipTests
 
 # Stage 2: Create the final, lightweight runtime image
 # Replace 'openjdk:17-jre-slim' with any of the alternatives listed above
-FROM openjdk:17-jre-slim
+FROM eclipse-temurin:17-jre-focal
 WORKDIR /app
 # Copy the built JAR file from the 'build' stage
 COPY --from=build /app/target/*.jar app.jar
